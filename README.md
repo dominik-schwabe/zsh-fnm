@@ -16,10 +16,6 @@ e.g.
 ```zsh
 export ZSH_FNM_NODE_VERSION="15.0.0"
 ```
-or
-```zsh
-export ZSH_FNM_NODE_VERSION="latest"
-```
 
 ## Similar Projects
  - [zsh-nvm](https://github.com/lukechilds/zsh-nvm)

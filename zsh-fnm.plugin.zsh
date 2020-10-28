@@ -14,7 +14,7 @@ command -v fnm &>/dev/null || {
     command -v fnm &>/dev/null || _install_fnm
 }
 
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
 
 if [ -n "$ZSH_FNM_NODE_VERSION" ]; then
     if ! fnm use $ZSH_FNM_NODE_VERSION &>/dev/null; then
