@@ -8,6 +8,12 @@ add the following to your `.zshrc`
 zinit light "dominik-schwabe/zsh-fnm"
 ```
 
+to be sure, you get the completion run:
+```zsh
+zinit cclear
+zinit compinit
+```
+
 ## Configuration
 
 ### ZSH_FNM_NODE_VERSION

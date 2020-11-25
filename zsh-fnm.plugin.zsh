@@ -27,3 +27,5 @@ if [ -n "$ZSH_FNM_NODE_VERSION" ]; then
         fi
     fi
 fi
+
+fpath+="${0:h}/completion"
