@@ -9,13 +9,16 @@ _install_fnm() {
     return 0
 }
 
+# install fnm if not already installed
 command -v fnm &>/dev/null || {
     export PATH=$HOME/.fnm:$PATH
     command -v fnm &>/dev/null || _install_fnm
 }
 
+# activate fnm
 eval "$(fnm env)"
 
+# install a node version when ZSH_FNM_NODE_VERSION is set
 if [ -n "$ZSH_FNM_NODE_VERSION" ]; then
     if ! fnm use $ZSH_FNM_NODE_VERSION &>/dev/null; then
         echo "node version $ZSH_FNM_NODE_VERSION not present"
@@ -28,4 +31,10 @@ if [ -n "$ZSH_FNM_NODE_VERSION" ]; then
     fi
 fi
 
-fpath+="${0:h}/completion"
+# setup completion
+local FNM_COMPLETION_DIR="${0:h}/completion"
+local FNM_COMPLETION_PATH="$FNM_COMPLETION_DIR/_fnm"
+if ! [ -f $FNM_COMPLETION_PATH ]; then
+    mkdir -p $FNM_COMPLETION_DIR && fnm completions --shell zsh > $FNM_COMPLETION_PATH
+fi
+fpath+=$FNM_COMPLETION_DIR
