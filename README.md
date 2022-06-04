@@ -12,6 +12,20 @@ add the following to your `.zshrc`
 zi light "dominik-schwabe/zsh-fnm"
 ```
 
+with configurations
+
+```zsh
+zi ice atinit'ZSH_FNM_NODE_VERSION=15.0.0'
+zi light "dominik-schwabe/zsh-fnm"
+```
+
+with configurations + turbo mode
+
+```zsh
+zi ice wait lucid atinit'ZSH_FNM_NODE_VERSION=15.0.0'
+zi light "dominik-schwabe/zsh-fnm"
+```
+
 ## Configuration
 
 ### ZSH_FNM_NODE_VERSION
