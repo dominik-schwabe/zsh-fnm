@@ -2,15 +2,15 @@ _install_fnm() {
     FNM_INSTALL_URL="https://fnm.vercel.app/install"
 
     FNM_INSTALL_SCRIPT=$(curl -fsSL $FNM_INSTALL_URL 2>/dev/null) \
-    || FNM_INSTALL_SCRIPT=$(wget -qO- $FNM_INSTALL_URL 2>/dev/null) \
-    || {echo "curl or wget required to install fnm"; return 1}
+        || FNM_INSTALL_SCRIPT=$(wget -qO- $FNM_INSTALL_URL 2>/dev/null) \
+        || {echo "curl or wget required to install fnm"; return 1}
 
     bash -s -- --skip-shell <<< $FNM_INSTALL_SCRIPT || return 1
     return 0
 }
 
 command -v fnm &>/dev/null || {
-    export PATH=$HOME/.fnm:$PATH
+    export PATH=$HOME/.local/share/fnm:$PATH
     command -v fnm &>/dev/null || _install_fnm
 }
 
