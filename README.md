@@ -46,6 +46,15 @@ e.g.
 export ZSH_FNM_ENV_EXTRA_ARGS="--use-on-cd"
 ```
 
+### ZSH_FNM_INSTALL_DIR
+
+Set a fixed location where fnm gets installed.  
+e.g.
+
+```zsh
+export ZSH_FNM_INSTALL_DIR="$HOME/.fnm"
+```
+
 ## Similar Projects
 
 - [zsh-nvm](https://github.com/lukechilds/zsh-nvm)
