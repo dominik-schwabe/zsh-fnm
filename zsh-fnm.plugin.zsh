@@ -27,7 +27,10 @@ command -v fnm &>/dev/null || {
     command -v fnm &>/dev/null || _install_fnm
 }
 
-eval "$(fnm env $ZSH_FNM_ENV_EXTRA_ARGS)"
+function () {
+    local PROGRAM=$(eval "fnm env $ZSH_FNM_ENV_EXTRA_ARGS")
+    eval "$PROGRAM"
+}
 
 if [ -n "$ZSH_FNM_NODE_VERSION" ]; then
     if ! fnm use $ZSH_FNM_NODE_VERSION &>/dev/null; then
